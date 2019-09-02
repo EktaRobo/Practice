@@ -3,7 +3,7 @@ package com.example.ekta.practice;
 public class Manager {
     private static Manager ourInstance;
 
-    public static Manager getInstance() {
+    public synchronized static Manager getInstance() {
         if (ourInstance == null) {
             ourInstance = new Manager();
         }

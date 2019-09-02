@@ -9,5 +9,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Work work = new Work();
+        Work work1 = new Work();
+        new Thread(() -> {
+            work.doWork();
+        }).start();
+        new Thread(() -> {
+            work1.doWork();
+        }).start();
     }
 }
