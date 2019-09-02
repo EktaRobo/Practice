@@ -1,8 +1,11 @@
 package com.example.ekta.practice;
 
 public class Work {
+    public static Object monitor = new Object();
 
-    public synchronized void doWork() {
-       /**/
+    public void doWork() {
+       synchronized (monitor){
+          /**/
+        }
     }
 }
