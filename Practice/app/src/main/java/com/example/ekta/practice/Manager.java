@@ -1,20 +1,19 @@
 package com.example.ekta.practice;
 
 public class Manager {
-    private static Manager ourInstance;
 
     public static Manager getInstance() {
-        if (ourInstance == null) {
-            synchronized (Manager.class) {
-                if (ourInstance == null) {
-                    ourInstance = new Manager();
-                }
-            }
-        }
-
-        return ourInstance;
+        return Holder.getOurInstance();
     }
 
     private Manager() {
+    }
+
+    private static class Holder {
+        private static Manager ourInstance = new Manager();
+
+        public static Manager getOurInstance() {
+            return ourInstance;
+        }
     }
 }
